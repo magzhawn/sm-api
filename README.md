@@ -65,34 +65,8 @@ npm run test
 
 ## API Endpoints (common)
 
-The codebase exposes controllers for authentication, plans, and subscriptions. Below are typical endpoints and example usages — adapt request bodies to your implementation.
-
-- Auth
-  - `POST /auth/signup` — creates user and returns JWT
-    - Body: `{ "email": "user@example.com", "password": "password" }`
-  - `POST /auth/login` — returns JWT
-    - Body: `{ "email": "user@example.com", "password": "password" }`
-
-- Plans
-  - `GET /plans` — list available plans
-
-- Subscriptions
-  - `GET /subscriptions` — shows a current subscription of the user
-  -  `POST /subscriptions/checkout` — starts payment checkout process
-    - Example body: `{"planId": "standard"}`
-  - `POST /subscriptions/webhook` — Stripe webhook endpoint (configured to receive events from Stripe)
-    - Exmple body `
-{
-  "type": "checkout.session.completed",
-  "data": {
-    "object": {
-      "id": "cs_test_a19q9VuhJaWNrdl061mWuAq4jgTumSDrf1kaswbd3zBKD250GTKHpKbueo",
-      "object": "checkout.session",
-      "subscription": "sub_1SiIsj9m5gBf38FJ3tWiucKg"
-    }
-  }
-}
-`
+For the full guide be advised to use the following link to Postman Collection. 
+https://web.postman.co/workspace/My-Workspace~738d86af-68a5-4400-8d99-766b0298a1cf/collection/21600070-b6c766b8-048c-488a-b21a-cc9a6c938827?action=share&source=copy-link&creator=21600070
 
 ## Stripe (test) setup
 
